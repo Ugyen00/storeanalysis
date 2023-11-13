@@ -231,7 +231,6 @@ def update_graph(select_year, radio_items1, radio_items):
                             family = 'Arial',
                             size = 12,
                             color = 'orange')
-
                 ),
 
             legend = {
