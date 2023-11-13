@@ -15,8 +15,6 @@ sales['Month'] = sales['Order Date'].dt.month_name()
 
 
 app = dash.Dash(__name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}])
-# Code exists: server = app.server in src/app.py
-server = app.server
 
 app.layout = html.Div((
 
@@ -89,6 +87,7 @@ app.layout = html.Div((
 
     ], className = "row flex-display"),
 
+#all dataset
     html.Div((
         html.Div([
             dt.DataTable(id = 'my_datatable',
@@ -590,9 +589,7 @@ def update_graph(select_year, radio_items2, radio_items):
     sales4 = sales3[(sales3['Year'] == select_year) & (sales3['Segment'] == radio_items)].sort_values(by = ['Sales'], ascending = False).nlargest(10, columns = ['Sales'])
 
     if radio_items2 == 'State':
-
-
-
+        
      return {
         'data':[go.Bar(
                     x=sales2['Sales'],
@@ -644,7 +641,6 @@ def update_graph(select_year, radio_items2, radio_items):
                             family = 'Arial',
                             size = 12,
                             color = 'orange')
-
 
                 ),
 
@@ -702,9 +698,6 @@ def update_graph(select_year, radio_items2, radio_items):
                     '<b>Segment</b>: ' + sales4['Segment'].astype(str) + '<br>' +
                     '<b>City</b>: ' + sales4['City'].astype(str) + '<br>' +
                     '<b>Sales</b>: $' + [f'{x:,.2f}' for x in sales4['Sales']] + '<br>'
-
-
-
               )],
 
 
