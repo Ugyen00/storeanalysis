@@ -1,3 +1,4 @@
-from app import app
+from dash import app  # Replace "your_app_file" with the actual name of your Dash app file
 
-app = app()
+if __name__ == '__main__':
+    app.run_server(debug=True)
