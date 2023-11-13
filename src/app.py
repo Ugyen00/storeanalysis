@@ -15,6 +15,8 @@ sales['Month'] = sales['Order Date'].dt.month_name()
 
 
 app = dash.Dash(__name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}])
+# Code exists: server = app.server in src/app.py
+server = app.server
 
 app.layout = html.Div((
 
